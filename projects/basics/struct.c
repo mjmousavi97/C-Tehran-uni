@@ -27,61 +27,63 @@
 //     return;
 // }
 // --------------------------------------------------------------------------------------
-#include <stdio.h>
+// #include <stdio.h>
 
-struct TIME{
-    int h;
-    int m;
-    int s;
-};
-typedef struct TIME Time;
+// struct TIME{
+//     int h;
+//     int m;
+//     int s;
+// };
+// typedef struct TIME Time;
 
-struct DATE{
-    int y;
-    int m;
-    int d;
-};
-typedef struct DATE Date;
-
-
-void PrintTime(Time t){
-    printf("Time is: %d:%d:%d \n", t.h, t.m, t.s);
-
-    return;
-}
+// struct DATE{
+//     int y;
+//     int m;
+//     int d;
+// };
+// typedef struct DATE Date;
 
 
-void NextSecond(Time t, void (*print_func)(Time)){
-    t.s ++;
-    if (t.s == 60){
-        t.s = 0;
-        t.m ++;
+// void PrintTime(Time t){
+//     printf("Time is: %d:%d:%d \n", t.h, t.m, t.s);
 
-        if (t.m == 60){
-            t.m = 0;
-            t.h ++;
-
-            if (t.h == 24){
-                t.h = 0;
-            }
-        }
-    }
-
-    (print_func)(t);
-}
+//     return;
+// }
 
 
-void main(){
-    Time time;
+// void NextSecond(Time t, void (*print_func)(Time)){
+//     t.s ++;
+//     if (t.s == 60){
+//         t.s = 0;
+//         t.m ++;
 
-    printf("Enter hour(int), minutes(int) and seconds(int), please: ");
-    scanf("%d %d %d", &time.h, &time.m, &time.s);
+//         if (t.m == 60){
+//             t.m = 0;
+//             t.h ++;
 
-    PrintTime(time);
-    NextSecond(time, PrintTime);
+//             if (t.h == 24){
+//                 t.h = 0;
+//             }
+//         }
+//     }
 
-    return;
-}
+//     (print_func)(t);
+// }
+
+
+// void main(){
+//     Time time;
+
+//     printf("Enter hour(int), minutes(int) and seconds(int), please: ");
+//     scanf("%d %d %d", &time.h, &time.m, &time.s);
+
+//     PrintTime(time);
+//     NextSecond(time, PrintTime);
+
+//     return;
+// }
 
 // Time T = {5, 59, 59};
 // Date D = {14, 12, 25};
+//-----------------------------------------------------------------------------------
+

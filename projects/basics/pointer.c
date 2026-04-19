@@ -71,13 +71,22 @@
 //     return 0;
 // }
 // ---------------------------------------------------------
+// #include <stdio.h>
+
+// int main()
+// {
+//     char *str = "Hello world";
+//     // str+=2;
+//     printf("%d", *(str));
+
+//     return 0;
+// }
+//------------------------------------------------------------
 #include <stdio.h>
 
 int main()
 {
     char *str = "Hello world";
-    str+=2;
-    printf("%d", *(str+5));
-
+    printf("%s", str);
     return 0;
 }
