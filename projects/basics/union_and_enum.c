@@ -42,38 +42,52 @@
 //     return;
 // }
 // --------------------------------------------------------------------------------
+// #include <stdio.h>
+
+// typedef unsigned int uint;
+
+// struct CHANNEL{
+//     uint R:8;
+//     uint G:8;
+//     uint B:8;
+//     uint A:8;
+// };
+// typedef struct CHANNEL Channel;
+
+// union COLOR {
+//     uint ColorCode;
+//     Channel ColorChannels;
+// };
+
+// typedef union COLOR Color;
+
+// void main(){
+//     Channel a;
+//     Color m;
+
+//     printf("Size of a(Channel) is: %lu \n", sizeof(a));
+//     printf("Size of m(Color) is: %lu \n", sizeof(m));
+
+//     m.ColorChannels.R = 255;
+//     m.ColorChannels.G = 0;
+//     m.ColorChannels.B = 0;
+//     m.ColorChannels.A = 255;
+
+//     printf("ColorCode of m is: %u \n", m.ColorCode);
+
+//     return;
+// }
+//------------------------------------------------------------------------------
 #include <stdio.h>
-
-typedef unsigned int uint;
-
-struct CHANNEL{
-    uint R:8;
-    uint G:8;
-    uint B:8;
-    uint A:8;
-};
-typedef struct CHANNEL Channel;
-
-union COLOR {
-    uint ColorCode;
-    Channel ColorChannels;
-};
-
-typedef union COLOR Color;
+enum WEEK{Sat=1, Sun, Mon, Tue, Wen, Thu, Fri};
+typedef enum WEEK week;
 
 void main(){
-    Channel a;
-    Color m;
-
-    printf("Size of a(Channel) is: %lu \n", sizeof(a));
-    printf("Size of m(Color) is: %lu \n", sizeof(m));
-
-    m.ColorChannels.R = 255;
-    m.ColorChannels.G = 0;
-    m.ColorChannels.B = 0;
-    m.ColorChannels.A = 255;
-
-    printf("ColorCode of m is: %u \n", m.ColorCode);
+    week wk;
+    wk = sat;
+    printf("sat = %d \n", wk);
+    wk = sun;
+    printf("Sun = %d \n", wk);
 
     return;
 }
