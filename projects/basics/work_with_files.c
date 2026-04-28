@@ -58,3 +58,36 @@
 //     return 0;
 // }
 //----------------------------------------------------------------------------------
+#include <stdio.h>
+
+char upper(char c){
+    if (c >= 'a' & c <= 'z'){
+        return (c - 32);
+    }
+    else{
+        return c;
+    }
+}
+
+int main(){
+    char c;
+
+    FILE *f1 = fopen("/mnt/e/c-cpp/files/file.txt", "r");
+    FILE *f2 = fopen("/mnt/e/c-cpp/files/file2.txt", "w");
+
+    if (f1 == NULL){
+        printf("f1 is not readable!");
+    }
+
+    if (f2 == NULL){
+        printf("f2 doesnt exist! please check.");
+    }
+
+    while(!feof(f1)){
+        fscanf(f1, "%c", &c);
+        fprintf(f2, "%c", upper(c));
+    }
+
+    fclose(f1);
+    fclose(f2);
+}
